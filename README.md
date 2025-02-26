@@ -69,6 +69,8 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 ![Demo Web](https://github.com/DieppDiepp/NongTriAI/raw/main/image/demoweb.jpg)
 
 2️⃣ Website demo chatbot RAG: [https://nongtrichat.netlify.app/](https://nongtrichat.netlify.app/)
+![Demo Web chatbot](https://github.com/DieppDiepp/NongTriAI/blob/main/image/nongtrichat_1.png)
+![Demo Web chatbot](https://github.com/DieppDiepp/NongTriAI/blob/main/image/nongtrichat_2.png)
 
 ## 📂 Cấu trúc thư mục
 
