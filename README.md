@@ -15,7 +15,7 @@
 2. 📊 **ChromaDB**: Vector database lưu trữ embedding các tài liệu nông nghiệp.
 3. 🤖 **Gemini 2.0 Flash**: Mô hình AI từ Google dùng để sinh câu trả lời.
 4. 📝 **Embedding Tiếng Việt**: Sử dụng mô hình [dangvantuan/vietnamese-embedding](https://huggingface.co/dangvantuan/vietnamese-embedding) tối ưu cho dữ liệu tiếng Việt.
-5. 🦜️🔗 LangChain **LangChain**: Sử dụng framework LangChain để tương tác với LLMs, áp dụng các kỹ thuật tối ưu như multi-branch, parallel-branch để nâng cao hiệu suất.
+5. 🦜️🔗 **LangChain**: Sử dụng framework LangChain để tương tác với LLMs, áp dụng các kỹ thuật tối ưu như multi-branch, parallel-branch để nâng cao hiệu suất.
 
 ## 🔥 Các điểm tối ưu 
 
