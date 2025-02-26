@@ -81,6 +81,7 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 ├── formatdocs.py             # Định dạng dữ liệu trả về
 ├── NongTriConservation.py    # Triển khai chuỗi RAG
 ├── NongtriPrompt.py          # Định nghĩa prompt
+├── Requirements.txt          # Các thư viện yêu cầu 
 ├── test_gemini.py            # Tích hợp Gemini-2.0
 └── DB/                       # ChromaDB lưu trữ dữ liệu
 ```
