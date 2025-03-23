@@ -75,6 +75,12 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 2️⃣ Website demo chatbot RAG: [https://nongtrichat.netlify.app/](https://nongtrichat.netlify.app/)
 ![Demo Web chatbot](https://github.com/DieppDiepp/NongTriAI/blob/main/image/nongtrichat_full.png)
 
+3️⃣ Ứng dụng APK được Lê Vy thành viên trong team dự thi Web3 AI Hackfest phát triển - https://github.com/Zile228/NongTri_App 
+
+-------------
+## Hiện tại chúng tôi đang nâng cấp lên phiên bản hoàn thiện với 3 loại cây trồng: cà phê, hồ tiêu, sầu riêng đi kèm với các kỹ thuật tối ưu như multi queries, routing database, structured LLMs response,... đảm bảo tốc độ truy vấn cao và chính xác
+
+
 ## 📂 Cấu trúc thư mục
 
 ```
