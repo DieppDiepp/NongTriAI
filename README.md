@@ -59,6 +59,9 @@ Tạo file `.env` với nội dung:
 ```
 OPENAI_API_KEY=your-google-api-key
 GOOGLE_API_KEY=your-google-api-key
+LANGSMITH_TRACING=true
+LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
+LANGSMITH_API_KEY="your-langsmith-api-key"
 
 ```
 
