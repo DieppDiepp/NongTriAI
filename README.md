@@ -99,6 +99,7 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 ├── NongtriPrompt.py          # Định nghĩa prompt
 ├── Requirements.txt          # Các thư viện yêu cầu 
 ├── test_gemini.py            # Tích hợp Gemini-2.0
+├── structured_response.py    # Ép LLm trả về kết quả cho trước
 └── DB/                       # ChromaDB lưu trữ dữ liệu
 ```
 
