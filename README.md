@@ -19,6 +19,8 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
 
 ----------------------
 ## Dự án đạt giải Á Quân của cuộc thi 𝐖𝐞𝐛𝟑 & 𝐀𝐈 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧
+𝐖𝐞𝐛𝟑 & 𝐀𝐈 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧 là cuộc thi toàn quốc về ý tưởng công nghệ thu hút 1012 đơn đăng ký và 452 ý tưởng được gửi về
+
 ![Nong Tri Web3 & AI Ideathon](https://github.com/DieppDiepp/NongTriAI/raw/main/image/top-2.jpg)
 
 -------------
