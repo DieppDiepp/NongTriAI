@@ -42,13 +42,13 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
 
 2. 🔎 **Phân nhánh quy trình (Route Prompt)**:
    - Nhận diện câu hỏi thông qua prompt phân loại (định nghĩa trong `NongtriPrompt.py`).
-   - Tự động quyết định truy vấn CSDL hoặc trả lời tự do.
+   - Tự động quyết định truy vấn CSDL phù hợp.
 
 3. 🔗 **RAG Chain Linh Hoạt**:
    - Chuỗi pipeline linh hoạt từ truy vấn độc lập đến tổng hợp nội dung (định nghĩa trong `test_gemini.py` và `NongTriConservation.py`).
 
 4. 🎯 **Truy vấn chính xác cao**:
-   - Sử dụng k=3 để trích xuất 3 kết quả gần nhất.
+   - Sử dụng k=5 và áp dụng kỹ thuật multi queries để sinh ra 3 phiên bản câu hỏi của người dùng, trích xuất 15 kết quả gần nhất, .
    - Quy định nghiêm ngặt về nguồn trích dẫn và ngôn ngữ trả lời.
 
 ## 🚀 Cách chạy dự án
@@ -95,8 +95,8 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 3️⃣ Ứng dụng APK được Lê Vy thành viên trong team dự thi Web3 AI Hackfest phát triển - https://github.com/Zile228/NongTri_App 
 
 -------------
-## Hiện tại chúng tôi đang nâng cấp lên phiên bản hoàn thiện với 3 loại cây trồng: cà phê, hồ tiêu, sầu riêng đi kèm với các kỹ thuật tối ưu như multi queries, routing database, structured LLMs response,... đảm bảo tốc độ truy vấn cao và chính xác
-
+## Hiện tại phiên bản cung cấp thông tin 3 loại cây trồng: cà phê, hồ tiêu, sầu riêng đi kèm với các kỹ thuật tối ưu như multi queries, routing database, structured LLMs response,... đảm bảo tốc độ truy vấn cao và chính xác
+**Vì lý do bảo mật, phân đoạn tạo vector store tự động được bảo mật**, nếu có nhu cầu sử dụng vui lòng liên hệ!
 
 ## 📂 Cấu trúc thư mục
 
