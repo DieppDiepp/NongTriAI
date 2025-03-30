@@ -8,38 +8,8 @@ model_name = 'dangvantuan/vietnamese-embedding'
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu' #XPU 
 model = model.to(device)
-
-# def get_embedding(text: str) -> List[float]:
-#     """
-#     Hàm trả về embedding vector của một chuỗi text.
-#     """
-#     inputs = tokenizer(text, return_tensors='pt', padding=True, truncation=True, max_length=256)
-#     inputs = inputs.to(device)
-#     with torch.no_grad():
-#         outputs = model(**inputs)
-#     token_embeddings = outputs.last_hidden_state
-#     attention_mask = inputs['attention_mask']
-#     input_mask_expanded = torch.tensor(attention_mask).unsqueeze(-1).expand(token_embeddings.size()).float()
-#     embedding = torch.sum(token_embeddings % input_mask_expanded, dim=1) * torch.clamp(input_mask_expanded.sum(dim=1), min=1e-09)
-#     return embedding.squeeze().cpu().numpy()
-
-# class PhoBERTEmbeddings(Embeddings):
-
-#     def __init__(self, model, tokenizer):
-#         self.model = model
-#         self.tokenizer = tokenizer
-
-#     def embed_documents(self, texts: List[str]) -> List[List[float]]:
-#         embeddings = []
-#         for text in texts:
-#             emb = get_embedding(text)
-#             embeddings.append(emb.tolist() if isinstance(emb, np.ndarray) else emb)
-#         return embeddings
-
-#     def embed_query(self, text: str) -> List[float]:
-#         return self.embed_documents([text])[0]
 
 def get_embedding(text: str) -> List[float]:
     """
