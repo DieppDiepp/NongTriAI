@@ -2,14 +2,24 @@
 
 ## 📌 Giới thiệu
 
-**Nông Trí AI** là một chatbot được thiết kế để hỗ trợ kiến thức nông nghiệp về cây cà phê, sầu riêng và hồ tiêu. Hệ thống sử dụng công nghệ **RAG (Retrieval-Augmented Generation)** kết hợp với các mô hình ngôn ngữ lớn để trích xuất và tổng hợp thông tin chính xác từ kho dữ liệu.
+**Nông Trí AI** là một hệ thống hỗ trợ kiến thức nông nghiệp về cây cà phê, sầu riêng và hồ tiêu. Hệ thống sử dụng công nghệ **RAG (Retrieval-Augmented Generation)** kết hợp với các mô hình ngôn ngữ lớn để trích xuất và tổng hợp thông tin chính xác từ kho dữ liệu.
+
+## Dự án bao gồm
+
+### Chatbot Nông Trí AI
+Chatbot được xây dựng bằng mô hình RAG giúp người dùng tra cứu thông tin nông nghiệp chính xác và nhanh chóng.
+- **Github**: [DieppDiepp/NongTriAI](https://github.com/DieppDiepp/NongTriAI)
+
+### Ứng dụng Nông Trí AI (APK)
+Phiên bản di động giúp người dùng truy cập thông tin dễ dàng hơn.
+- **Github**: [Zile228/NongTri_App](https://github.com/Zile228/NongTri_App)
+
+## Giao diện ứng dụng
+![Nong Tri Web3 & AI Ideathon](https://github.com/DieppDiepp/NongTriAI/raw/main/image/Nông%20Trí%20–%20Chatbot%20trợ%20lý%20nông%20nghiệp%20AI%20dành%20riêng%20cho%20nông%20dân%20Việt%20Nam.png)
+
 ----------------------
-
-## Hiện dự án đang có mặt tại top 10 của cuộc thi 𝐖𝐞𝐛𝟑 & 𝐀𝐈 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧
-![Nong Tri Web3 & AI Ideathon](https://github.com/DieppDiepp/NongTriAI/raw/main/image/web3-ai-top10.jpg)
-
-## Hiện dự án đang có mặt tại top 30 của cuộc thi 𝐖𝐞𝐛𝟑 & 𝐀𝐈 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧
-![Nong Tri Web3 & AI Ideathon](https://github.com/DieppDiepp/NongTriAI/raw/main/image/nongtri_web3_ai_image.jpg)
+## Dự án đạt giải Á Quân của cuộc thi 𝐖𝐞𝐛𝟑 & 𝐀𝐈 𝐈𝐝𝐞𝐚𝐭𝐡𝐨𝐧
+![Nong Tri Web3 & AI Ideathon](https://github.com/DieppDiepp/NongTriAI/raw/main/image/top-2.jpg)
 
 -------------
 ## 🛠️ Kiến trúc hệ thống
