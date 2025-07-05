@@ -33,12 +33,12 @@ db_path_saurieng = os.path.join(cur_file_path,"DB", "VectorStore-db", "saurieng"
 
 # 2. Định nghĩa chat model và memory
 non_creative_chat_model = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     temperature=0.3
 )
 
 creative_chat_model = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     temperature=1
 )
 # Đảm bảo llm chỉ trả về chat hoặc retrieval
