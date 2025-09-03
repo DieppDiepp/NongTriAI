@@ -18,3 +18,4 @@ langchain_google_genai==2.0.9
 langchain_chroma==0.2.2
 chromadb==0.5.0
 onnxruntime==1.15.1
+pydantic==2.9.2
