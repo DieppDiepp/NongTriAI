@@ -45,9 +45,8 @@ answer_prompt = (
     "4. Nếu có tài liệu phù hợp, tổng hợp thông tin từ chúng thành một câu trả lời ngắn gọn, chính xác, trích dẫn tối đa 5 tài liệu liên quan nhất bằng tiếng Việt.\n"  
     "\n"  
     "Quy tắc:\n"  
-    "- **Tuyệt đối không** giả định kiến thức ngoài các tài liệu được cung cấp.\n"  
-    "- **Không bao giờ** đưa vào nội dung không liên quan, ngay cả khi nó có vẻ liên quan một phần.\n"  
-    "- **Luôn luôn** ưu tiên tính chính xác và tránh suy đoán.\n" 
+    "- **Có thể** kết hợp kiến thức của bạn, nếu kiến thức đó bổ trợ cho tài liệu được trích dẫn.\n"  
+    "- **Có thể** đưa vào nội dung không liên quan, nếu nó có vẻ liên quan một phần.\n"  
     "Khi cung cấp thông tin, hãy:\n"
     "Đánh dấu nguồn của mỗi thông tin bằng số tham chiếu (bắt đầu từ 1) theo định dạng IEEE (ví dụ: [1], [2], ...) Cuối mỗi đoạn trả lời, liệt kê đầy đủ thông tin nguồn tham khảo theo format:[số thứ tự trích dẫn]: [số trang] - [tên tệp nguồn] - [URL/liên kết nguồn]\n\n"
     "Ví dụ: Đất trồng cà phê phải là đất tốt, tầng đất dày [1], tơi xốp, dễ thoát nước và giàu dinh dưỡng [2].\n"
@@ -106,18 +105,15 @@ Trả về 'chat' khi:
 - Người dùng muốn trò chuyện thông thường
 - Người dùng hỏi về khả năng của bạn
 - Người dùng hỏi về cây trồng khác ngoài cà phê, hồ tiêu, sầu riêng
-- Câu hỏi không cung cấp đủ ngữ cảnh để xác định cây cụ thể
-- Câu hỏi chung chung về nông nghiệp
-
+- Câu hỏi không liên quan tới nông nghiệp hoặc thời tiết hoặc trị trường nông sản
+     
 Trả về 'retrieval' KHI VÀ CHỈ KHI:
-- Câu hỏi liên quan cụ thể đến cây cà phê, hồ tiêu hoặc sầu riêng
-- Câu hỏi rõ ràng nhắc đến "cà phê", "hồ tiêu", "tiêu", hoặc "sầu riêng"
-
+- Câu hỏi liên quan đến nông nghiệp 
+- Câu hỏi nhằm mục đích tìm kiếm thông tin về nông nghiệp
+     
 Chỉ trả về 'chat' hoặc 'retrieval' mà không có giải thích.
 
 Ví dụ:
-Đầu vào: "Xin chào, bạn là ai?"
-Output: chat
 
 Đầu vào: "Bạn có thể làm gì?"
 Output: chat
@@ -129,13 +125,10 @@ Output: retrieval
 Output: retrieval
 
 Đầu vào: "Cách bón phân cho cây trồng"
-Output: chat
+Output: retrieval
 
 Đầu vào: "Nhiệt độ thích hợp để trồng tiêu là bao nhiêu?"
 Output: retrieval
-
-Đầu vào: "Làm sao để cây trồng phát triển tốt?"
-Output: chat
 """),
     ("human", "Đầu vào của người dùng: {question}")
 ])
