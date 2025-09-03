@@ -28,7 +28,7 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
 
 1. 🚀 **FastAPI**: Framework backend chính dùng để xây dựng API giao tiếp với chatbot.
 2. 📊 **ChromaDB**: Vector database lưu trữ embedding các tài liệu nông nghiệp.
-3. 🤖 **Gemini 2.0 Flash**: Mô hình AI từ Google dùng để sinh câu trả lời.
+3. 🤖 **Gemini 2.5 Flash**: Mô hình AI từ Google dùng để sinh câu trả lời.
 4. 📝 **Embedding Tiếng Việt**: Sử dụng mô hình [dangvantuan/vietnamese-embedding](https://huggingface.co/dangvantuan/vietnamese-embedding) tối ưu cho dữ liệu tiếng Việt.
 5. 🦜️🔗 **LangChain + Langsmith**: Sử dụng framework LangChain, Langsmith để tương tác và theo dõi LLMs, áp dụng các kỹ thuật tối ưu như multi-branch, parallel-branch để nâng cao hiệu suất.
 
@@ -57,24 +57,26 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
 
 ### 1. 📋 Yêu cầu môi trường
 
-- Python >= 3.11.0
+- Python >= 3.10.11
 - Cài đặt các package yêu cầu:
 
 ```bash
+py -3.10 -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+- Chạy file `showlib.py` để kiểm tra các package cài thành công 
 ### 2. 🔐 Cài đặt biến môi trường
 
 Tạo file `.env` với nội dung:
 
 ```
-OPENAI_API_KEY=your-google-api-key
 GOOGLE_API_KEY=your-google-api-key
 LANGSMITH_TRACING=true
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_API_KEY="your-langsmith-api-key"
-
+LANGSMITH_PROJECT="your-langsmith-name"
 ```
 
 ### 3. 🧑‍💻 Chạy API
@@ -110,7 +112,7 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 ├── NongTriConservation.py    # Triển khai chuỗi RAG
 ├── NongtriPrompt.py          # Định nghĩa prompt
 ├── Requirements.txt          # Các thư viện yêu cầu 
-├── test_gemini.py            # Tích hợp Gemini-2.0
+├── main_processing.py        # Tích hợp Gemini- flash 2.5
 ├── structured_response.py    # Ép LLm trả về kết quả cho trước
 └── DB/                       # ChromaDB lưu trữ dữ liệu
 ```
