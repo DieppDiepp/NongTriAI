@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 load_dotenv()
-from test_gemini import create_rag_chain, get_memory
+from main_processing import create_rag_chain, get_memory
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uuid
@@ -63,4 +63,5 @@ async def chat_endpoint(request: ChatRequest):
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="127.0.0.1", port=8000)
