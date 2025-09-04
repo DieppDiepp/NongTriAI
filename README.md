@@ -36,7 +36,7 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
 
 ![Nong Tri Web3 & AI Ideathon](https://github.com/DieppDiepp/NongTriAI/raw/main/image/langsmith_2.png)
 
-## 🔥 Các điểm tối ưu 
+## Các điểm tối ưu 
 
 1. 📌 **Tích hợp Embedding Tiếng Việt**:
    - Dùng mô hình embedding tiêu chuẩn cho tiếng Việt (được triển khai trong file `VietnameseEmbedding.py`).
@@ -53,7 +53,7 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
    - Sử dụng k=5 và áp dụng kỹ thuật multi queries để sinh ra 3 phiên bản câu hỏi của người dùng, trích xuất 15 kết quả gần nhất, .
    - Quy định nghiêm ngặt về nguồn trích dẫn và ngôn ngữ trả lời.
 
-## 🚀 Cách chạy dự án
+## Cách chạy dự án
 
 ### 1. 📋 Yêu cầu môi trường
 
@@ -87,7 +87,7 @@ pip install -r requirements.txt
 - Chạy file `showlib.py` để kiểm tra các package/ lib cài thành công 
 ### 2. 🔐 Cài đặt biến môi trường
 
-Tạo file `.env` với nội dung:
+Tạo file `.env` với nội dung (Lưu ý file .env nằm cùng cấp với các Scripts python):
 
 ```
 GOOGLE_API_KEY=your-google-api-key # Lấy trên Google AI Studio 
@@ -97,13 +97,55 @@ LANGSMITH_API_KEY="your-langsmith-api-key" # Lấy trên Langsmith
 LANGSMITH_PROJECT="your-langsmith-name" # Lấy trên Langsmith
 ```
 
+```bash
+# Window tạo file .env đơn giản
+# Linux
+touch .env
+nano .env # Sau đó dán API KEY vào
+```
 ### 3. 🧑‍💻 Chạy API
-
+Chọn 1 trong 2 cách sau (ưu tiên cách 2)
 ```bash
 python FastApiDev.py
 ```
 
-Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+```bash
+uvicorn FastApiDev:app --host 127.0.0.1 --port 8000 --reload # Mỗi khi có thay đổi trong code thì tự động reboost lại hệ thống với thay đổi mới.
+```
+#### WINDOW
+Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000docs)
+
+#### LINUX - Test API bằng curl (kết quả trả về chưa được format)
+```bash
+curl -X POST "http://127.0.0.1:8000/chat" \
+-H "Content-Type: application/json" \
+-d '{"question":"Bón phân cho cây cà phê vào giai đoạn nào?"}'
+```
+
+### 5. Dùng tunel để tạo public address (Ngrok/ Cloudflared tunnel)
+
+#### WINDOW
+Tải về và cài đặt Cloudflared tunnel tại: https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.msi
+
+```bash
+cloudflared tunnel --url http://127.0.0.1:8000
+```
+#### LINUX
+```bash
+curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb -o cloudflared.deb
+sudo dpkg -i cloudflared.deb
+cloudflared --version # cloudflared version xxxx -> thành công
+
+cloudflared tunnel --url http://127.0.0.1:8000
+```
+
+Sau đó ta sẽ nhận được một thông báo tương tự:
+
+Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  https://comp-entire-risks-alto.trycloudflare.com
+
+Ta thêm hậu tố /docs vào: https://comp-entire-risks-alto.trycloudflare.com/docs -> Đây chính là public IP có thể truy cập được từ tất cả các thiết bị.
+
+Để cố định liên kết truy cập trên của Cloudflared, tìm hiểu thêm tại https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/
 
 ## 🌐 Website Demo
 
@@ -133,6 +175,7 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 ├── structured_response.py    # Ép LLm trả về kết quả cho trước
 ├── mapping.py                # Chuyển plan_type về lại tiếng Việt
 ├── Requirements.txt          # Các thư viện yêu cầu 
+├── .env                      # API Key cần thiết
 └── DB/                       # ChromaDB lưu trữ dữ liệu
 ```
 
