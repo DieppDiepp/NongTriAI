@@ -106,12 +106,17 @@ nano .env # Sau đó dán API KEY vào
 ### 3. 🧑‍💻 Chạy API
 Chọn 1 trong 2 cách sau (ưu tiên cách 2)
 ```bash
+tmux new -s fastapi # Tạo tạo session ảo bên trong VPS, tách biệt với terminal, khi tắt terminal session SSH mất, nhưng cái tmux session vẫn chạy trên VPS.
+
 python FastApiDev.py
 ```
 
 ```bash
+tmux new -s fastapi # Tạo tạo session ảo bên trong VPS, tách biệt với terminal, khi tắt terminal session SSH mất, nhưng cái tmux session vẫn chạy trên VPS.
+
 uvicorn FastApiDev:app --host 127.0.0.1 --port 8000 --reload # Mỗi khi có thay đổi trong code thì tự động reboost lại hệ thống với thay đổi mới.
 ```
+
 #### WINDOW
 Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000docs)
 
@@ -128,6 +133,7 @@ curl -X POST "http://127.0.0.1:8000/chat" \
 Tải về và cài đặt Cloudflared tunnel tại: https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.msi
 
 ```bash
+tmux new -s tunnel # Tạo tạo session ảo bên trong VPS, tách biệt với terminal, khi tắt terminal session SSH mất, nhưng cái tmux session vẫn chạy trên VPS.
 cloudflared tunnel --url http://127.0.0.1:8000
 ```
 #### LINUX
@@ -146,6 +152,15 @@ Your quick Tunnel has been created! Visit it at (it may take some time to be rea
 Ta thêm hậu tố /docs vào: https://comp-entire-risks-alto.trycloudflare.com/docs -> Đây chính là public IP có thể truy cập được từ tất cả các thiết bị.
 
 Để cố định liên kết truy cập trên của Cloudflared, tìm hiểu thêm tại https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/
+
+### 7.  Kiểm tra các tiến trình đang chạy
+```bash
+tmux ls
+# fastapi: 1 windows (created Thu Sep  4 08:56:45 2025)
+# tunnel: 1 windows (created Thu Sep  4 08:57:17 2025)
+
+# Có thể vào lại bằng tmux attach -t fastapi/tunnel
+```
 
 ## 🌐 Website Demo
 
