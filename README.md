@@ -61,22 +61,40 @@ Phiên bản di động giúp người dùng truy cập thông tin dễ dàng h�
 - Cài đặt các package yêu cầu:
 
 ```bash
-py -3.10 -m venv venv
-venv\Scripts\activate
+# Window
+git clone https://github.com/DieppDiepp/NongTriAI
+py -3.10 -m venv venv310
+venv310\Scripts\activate
+python --version   # Python 3.10.11
+pip install -r requirements.txt
+
+# Linux - Thông thường có sẵn python, nhưng phiên bản có thể không phù hợp
+# Cài phiên bản python cụ thể
+sudo apt update
+sudo apt install software-properties-common -y
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+sudo apt install python3.10 python3.10-venv python3.10-dev -y
+python3.10 --version # Python 3.10.xx thì đã cài thành công 
+
+# Kích hoạt môi trường ảo
+git clone https://github.com/DieppDiepp/NongTriAI
+python3.10 -m venv venv310
+source venv310/bin/activate
 pip install -r requirements.txt
 ```
 
-- Chạy file `showlib.py` để kiểm tra các package cài thành công 
+- Chạy file `showlib.py` để kiểm tra các package/ lib cài thành công 
 ### 2. 🔐 Cài đặt biến môi trường
 
 Tạo file `.env` với nội dung:
 
 ```
-GOOGLE_API_KEY=your-google-api-key
-LANGSMITH_TRACING=true
+GOOGLE_API_KEY=your-google-api-key # Lấy trên Google AI Studio 
+LANGSMITH_TRACING=true 
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
-LANGSMITH_API_KEY="your-langsmith-api-key"
-LANGSMITH_PROJECT="your-langsmith-name"
+LANGSMITH_API_KEY="your-langsmith-api-key" # Lấy trên Langsmith
+LANGSMITH_PROJECT="your-langsmith-name" # Lấy trên Langsmith
 ```
 
 ### 3. 🧑‍💻 Chạy API
@@ -108,12 +126,13 @@ Mở trình duyệt tại: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/do
 .
 ├── VietnameseEmbedding.py    # Xử lý embedding tiếng Việt
 ├── FastApiDev.py             # Khởi chạy FastAPI
+├── main_processing.py        # Tích hợp Gemini- flash 2.5
 ├── formatdocs.py             # Định dạng dữ liệu trả về
 ├── NongTriConservation.py    # Triển khai chuỗi RAG
 ├── NongtriPrompt.py          # Định nghĩa prompt
-├── Requirements.txt          # Các thư viện yêu cầu 
-├── main_processing.py        # Tích hợp Gemini- flash 2.5
 ├── structured_response.py    # Ép LLm trả về kết quả cho trước
+├── mapping.py                # Chuyển plan_type về lại tiếng Việt
+├── Requirements.txt          # Các thư viện yêu cầu 
 └── DB/                       # ChromaDB lưu trữ dữ liệu
 ```
 
